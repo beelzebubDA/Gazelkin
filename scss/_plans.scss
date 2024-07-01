@@ -1,0 +1,273 @@
+.plans {
+    margin-bottom: 90px;
+
+    &__title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 35px;
+    }
+
+    .normal-text {
+        width: 550px;
+        margin-bottom: 40px;
+    }
+
+    &__tabs {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .plans__tab {
+            font-weight: 400;
+        }
+    }
+
+    &__tab {
+        width: 33.333%;
+        padding: 25px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: 400;
+        border: 1px solid #E0E0E0;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+
+        &.active {
+            font-weight: 500;
+        }
+
+        &-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 25px;
+            display: none;
+            width: 12px;
+            height: 12px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+    }
+
+    [type="radio"] {
+        display: none;
+    }
+
+    #plans-radio-1:checked~#plans-group-1 {
+        display: flex;
+    }
+
+    #plans-radio-1:checked~&__tabs>[for="plans-radio-1"] {
+        background-color: #F7D247;
+        border-color: #F7D247;
+
+        .plans__tab-icon {
+            display: block;
+        }
+    }
+
+    #plans-radio-2:checked~#plans-group-2 {
+        display: flex;
+    }
+
+    #plans-radio-2:checked~&__tabs>[for="plans-radio-2"] {
+        background-color: #F3F3F3;
+        border-color: #F3F3F3;
+
+        .plans__tab-icon {
+            display: block;
+        }
+    }
+
+    #plans-radio-3:checked~#plans-group-3 {
+        display: flex;
+    }
+
+    #plans-radio-3:checked~&__tabs>[for="plans-radio-3"] {
+        background-color: #1C120B;
+        border-color: #1C120B;
+        color: #fff;
+
+        .plans__tab-icon {
+            display: block;
+            background: #fff;
+        }
+    }
+
+    #plans-group-3 .plans__card-btn {
+        background-color: #F7D247;
+        color: #1C120B;
+    }
+
+
+    &__cards {
+        display: none;
+        gap: 20px;
+        justify-content: space-between;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    &__cards#plans-group-1 &__card {
+        background: radial-gradient(48.53% 93.85% at 81.46% 75.68%, #F7D247 0%, #F4B514 100%);
+    }
+
+    &__cards#plans-group-2 &__card {
+        background: #F3F3F3 !important;
+    }
+
+    &__cards#plans-group-3 &__card {
+        background: #1C120B;
+        color: #fff
+    }
+
+    &__card {
+        border-radius: 20px;
+        padding: 40px;
+        width: 33.333%;
+        min-width: 304px;
+
+        &-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        &-descr {
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        &-img {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        &-feature {
+            display: flex;
+            padding: 6px 0 5px;
+            border-bottom: 1px dashed rgba(28, 18, 11, 0.2392156863);
+            display: flex;
+            justify-content: space-between;
+            min-width: max-content;
+        }
+
+        &-btn {
+            margin-top: 40px;
+            border-radius: 16px;
+            background-color: #1C120B;
+            color: #fff;
+            padding: 19px;
+            width: 100%;
+        }
+    }
+}
+
+#plans-group-3 {
+    .plans__card-feature {
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.24);
+    }
+}
+
+@media (max-width: 800px) {
+    .plans {
+        &__tab {
+            padding: 24px 12px;
+            border-radius: 20px;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        &__cards {
+            .plans__card {
+                padding: 24px;
+                width: 70%;
+                min-width: 413px;
+            }
+        }
+    }
+}
+
+@media (max-width: 770px) {
+    .plans__card-feature-value {
+        text-align: end;
+    }
+}
+
+@media (max-width: 680px) {
+    .plans {
+        margin-bottom: 40px;
+
+        &__card {
+            padding: 24px;
+
+            &-title {
+                font-size: 20px;
+            }
+
+            &-descr {
+                font-size: 16px;
+            }
+        }
+
+        &__title {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        &__text {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+
+            &-shadow {
+                display: block !important;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                box-shadow: 0px 0px 100px 120px #fff;
+                width: 100%;
+
+                button {
+                    position: absolute;
+                    bottom: 15px;
+                    font-size: 25px;
+                    left: 5px;
+                }
+            }
+        }
+
+        &__tab {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            font-weight: 400 !important;
+
+            &-icon {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        .normal-text {
+            width: 100%;
+        }
+
+    }
+}
+
+@media (max-width: 530px) {
+    .plans__tab {
+        &-icon {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .plans__tabs {
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+}

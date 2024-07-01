@@ -1,0 +1,207 @@
+.plan-stats {
+    margin-bottom: 80px;
+
+    &__title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 37.5px;
+        margin-bottom: 40px;
+    }
+
+    &__texts {
+        display: flex;
+        gap: 60px;
+
+        .normal-text {
+            width: 100%;
+        }
+    }
+
+    &__cards {
+        margin-top: 56px;
+        display: flex;
+        gap: 100px;
+    }
+
+    &__card {
+        &-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        &-value {
+            display: flex;
+            border-bottom: 1px dashed #C2C2C2;
+            padding: 7px 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+            transition: 200ms;
+            cursor: default;
+            max-width: 414px;
+
+            &:hover {
+                color: var(--main-red);
+            }
+
+            &-name {
+                line-height: 24px;
+            }
+
+            &-item {
+                min-width: max-content;
+                display: block;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .plan-stats {
+        &__cards {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &__card {
+            width: 600px;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .plan-stats__texts {
+        flex-direction: column;
+        gap: 0 !important;
+        position: relative;
+        overflow: hidden;
+
+        .normal-text {
+            width: 100% !important;
+        }
+
+        &-shadow {
+            display: block !important;
+            box-shadow: 0px 0px 100px 126px #fff;
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 100%;
+
+            button {
+                font-size: 30px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .plan-stats__texts-shadow {
+        &.on-mobile {
+            box-shadow: 0px 0px 90px 100px #fff;
+
+            &.show {
+                box-shadow: none;
+
+                .plan__stats__btn {
+                    &.show-more-btn {
+                        left: 2px;
+                        transform: rotate(180deg);
+                        transition: all 0.3s ease;
+                        -webkit-transform: rotate(180deg);
+                        -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                        -o-transform: rotate(180deg);
+}
+                }
+            }
+
+            .plan__stats__btn {
+                &.show-more-btn {
+                    left: 2px;
+                    transform: rotate(0);
+                    transition: all 0.3s ease;
+                    -webkit-transform: rotate(0);
+                    -moz-transform: rotate(0);
+                    -ms-transform: rotate(0);
+                    -o-transform: rotate(0);
+}
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .plan-stats {
+        margin-bottom: 56px !important;
+    }
+} 
+
+@media (max-width: 750px) {
+    .plan-stats__texts-shadow {
+        &.on-mobile {
+            &.show {
+                box-shadow: 0px 0px 0px 0px #fff;
+                transition: all 0.3s ease;
+
+                .plan__stats__btn{
+                    .bi {
+                        &::before {
+                            rotate: 180deg;
+                            transition: all 0.3s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .plan-stats {
+        margin-bottom: 118px;
+
+        &__title {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 36px;
+            margin-bottom: 24px;
+        }
+
+        &__cards {
+            margin-top: 40px;
+        }
+
+        &__card {
+            width: 100%;
+
+            &-title {
+                font-size: 20px;
+                margin-bottom: 14px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .plan-stats {
+        &__title {
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+        &__texts-shadow button {
+            left: 10px;
+            transform: translateX(0);
+        }
+    }
+}

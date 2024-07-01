@@ -1,0 +1,403 @@
+.parking {
+
+    &>&__card-details-title,
+    &>&__card-flex {
+        display: none;
+    }
+
+    &__stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 56px;
+        margin-bottom: 80px;
+        gap: 100px;
+    }
+
+
+    &__stat {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &-item {
+            &-value {
+                font-size: 40px;
+                font-weight: 500;
+            }
+
+            &-name {
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            &-descr {
+                line-height: 21px;
+                font-size: 14px;
+                font-weight: 400;
+                max-width: 217px;
+            }
+        }
+    }
+
+    .swiper {
+        height: 0;
+        overflow: hidden;
+
+        &.active {
+            height: auto;
+            overflow: visible;
+        }
+    }
+
+    &__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    .normal-text {
+        margin-bottom: 16px;
+    }
+
+    &__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    &__tab {
+        border: 1px solid #E0E0E0;
+        border-radius: 16px;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 500;
+
+        &.active {
+            background-color: #F3F3F3;
+        }
+    }
+
+    &__card {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        background-color: #1C120B;
+        color: #fff;
+        padding: 40px;
+        padding-bottom: 20px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        &-flex {
+            display: flex;
+            gap: 50px;
+        }
+
+        &-details {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 45px;
+
+            &-title {
+                font-size: 24px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+
+                img {
+                    padding-left: 16px;
+                }
+            }
+        }
+
+        &-features {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 40px;
+            max-width: 324px;
+        }
+
+        &-feature {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+            padding-bottom: 5px;
+
+            &-value {
+                color: #F7D247;
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            &-btn {
+                padding-left: 62px !important;
+                padding-right: 62px !important;
+            }
+        }
+
+        &-price {
+            text-align: center;
+
+            &-name {
+                font-size: 16px;
+            }
+
+            &-value {
+                font-size: 32px;
+            }
+        }
+
+        &-img {
+            width: 65%;
+            max-height: 270px;
+            object-fit: contain;
+        }
+    }
+
+    &__gallery {
+        display: flex;
+        align-items: center;
+
+        &-item {
+            padding: 34px 22px 50px;
+            border-radius: 20px;
+            background-color: #F3F3F3;
+            cursor: pointer;
+
+            &.active {
+                background-color: #1C120B;
+                color: #fff;
+            }
+
+            &-img {
+                width: 100%;
+                max-height: 120px;
+                object-fit: contain;
+                margin-bottom: 16px;
+            }
+
+            &-name {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+#parking-card-2, #parking-card-3, #parking-card-4, #parking-card-5, #parking-card-6  {
+    width: 100%;
+}
+
+@media (max-width: 1300px) {
+    .parking {
+        &__card {
+            &-flex {
+                flex-direction: column-reverse;
+            }
+
+            &-img {
+                width: 100%;
+                display: block;
+                margin: auto;
+            }
+
+            &-details {
+                width: 100%;
+                margin-top: 0;
+                flex-direction: row;
+                gap: 56px;
+                align-items: end;
+
+                &>div:first-of-type {
+                    width: 50%;
+                }
+            }
+
+            &-bottom {
+                flex-direction: column-reverse;
+                width: 50%;
+
+                &-btn {
+                    width: 100%;
+                }
+            }
+
+            &-price {
+                width: 100%;
+                min-width: max-content;
+            }
+
+            &-features {
+                width: 100% !important;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .parking {
+        &__stats {
+            flex-wrap: wrap;
+            gap: 0;
+            row-gap: 50px;
+            justify-content: space-between;
+        }
+
+        &__stat {
+            width: 48%;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .opens__parkingtexts {
+        display: none;
+
+        &.active {
+            display: block;
+            margin-bottom: 25px !important;
+        }
+    }
+
+    .parking__card-price {
+        text-align: start !important;
+    }
+}
+
+@media (max-width: 770px) {
+    .parking__card {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 680px) {
+    .parking {
+        &__stats {
+            margin-bottom: 56px;
+        }
+
+        &__card {
+            padding: 24px;
+
+            &-img {
+                width: 105%;
+                position: relative;
+                top: 50px;
+                right: 30px;
+            }
+
+            &-details {
+                gap: 30px;
+
+                &-title {
+                    font-size: 24px;
+                    line-height: 36px;
+                    font-weight: 500;
+                }
+            }
+
+            &-price-value {
+                font-weight: 500;
+            }
+        }
+    }
+
+    .parking__gallery-item {
+        padding: 20px 2px 50px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .parking {
+        &__tab {
+            padding: 12px 24px;
+        }
+
+        .normal-text {
+            width: 100%;
+        }
+
+        &__card {
+            &-img {
+                width: 100%;
+            }
+
+            &-flex {
+                gap: 20px;
+            }
+
+            &-details {
+                flex-direction: column;
+                gap: 30px;
+
+                &>div:first-of-type {
+                    width: 100%;
+                }
+            }
+
+            &-bottom {
+                width: 100%;
+            }
+
+            &-features {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .parking {
+        &__tabs {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            overflow-x: auto;
+            padding-bottom: 15px;
+            gap: 0px;
+
+            .parking__tab {
+                margin: 8px;
+            }
+        }
+
+        &__tab {
+            width: max-content;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .parking__stat {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    #parking-card-el-1 {
+        .parking__card-flex {
+            gap: 45px 0;
+
+            .parking__card-img {
+                top: 35px;
+                right: 10px;
+                width: 110%;
+            }
+        }
+    }
+
+    .parking__gallery-item {
+        padding: 34px 22px 50px !important;
+    }
+}
